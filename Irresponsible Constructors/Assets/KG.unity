@@ -149,6 +149,11 @@ Prefab:
       propertyPath: left
       value: 97
       objectReference: {fileID: 0}
+    - target: {fileID: 114205742356694860, guid: ef13061e66f0c914587ce5dc9dcd01cf,
+        type: 2}
+      propertyPath: grabCode
+      value: 115
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef13061e66f0c914587ce5dc9dcd01cf, type: 2}
   m_IsPrefabParent: 0
@@ -357,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 3
-  box: {fileID: 1326839765763124, guid: dfab2bae6165f4398b752179e9f640aa, type: 2}
+  box: {fileID: 1564305221554176, guid: c69368d0abe40054ea664fbd596a30fa, type: 2}
   spawnPoint: {fileID: 688031706}
 --- !u!4 &775415059
 Transform:
@@ -536,6 +541,11 @@ Prefab:
       propertyPath: dotThresholdBreak
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 114205742356694860, guid: ef13061e66f0c914587ce5dc9dcd01cf,
+        type: 2}
+      propertyPath: grabCode
+      value: 274
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef13061e66f0c914587ce5dc9dcd01cf, type: 2}
   m_IsPrefabParent: 0
@@ -633,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2839d753204e244b6b4013e1a3ed5a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 0.5
+  velocity: 2
 --- !u!212 &2026315943
 SpriteRenderer:
   m_ObjectHideFlags: 0

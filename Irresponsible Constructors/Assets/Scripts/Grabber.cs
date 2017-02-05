@@ -67,4 +67,14 @@ public class Grabber : MonoBehaviour
             grabableInRange = grabable;
         }
     }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        Grabable grabable = collision.gameObject.GetComponent<Grabable>();
+
+        if (grabable != null && grabable == this.grabableInRange)
+        {
+            grabableInRange = null;
+        }
+    }
 }
