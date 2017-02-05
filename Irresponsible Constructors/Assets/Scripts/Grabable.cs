@@ -29,7 +29,6 @@ public class Grabable : MonoBehaviour {
     public void Grab()
     {
         RemoveRigidBody();
-        
     }
 
     public void Drop()
@@ -39,12 +38,14 @@ public class Grabable : MonoBehaviour {
 
     private void AddRigidBody()
     {
+        Debug.Log("Adding RigidBody");
         rigidBody = gameObject.AddComponent<Rigidbody2D>();
         rigidBody.mass = mass;
     }
 
     private void RemoveRigidBody()
     {
+        Debug.Log("Removing RigidBody");
         Destroy(rigidBody);
     }
 }

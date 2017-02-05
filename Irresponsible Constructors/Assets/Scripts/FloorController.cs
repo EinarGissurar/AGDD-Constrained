@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloorController : MonoBehaviour {
-
+public class FloorController : MonoBehaviour
+{
     [SerializeField]
     Transform startPoint;
 
@@ -18,19 +18,25 @@ public class FloorController : MonoBehaviour {
     public Vector2 StartPosition { get { return startPoint.position; } }
 
     public Vector2 EndPosition { get { return endPoint.position; } }
-    
+
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         //transform.Rotate(0, 0, 5 * Time.deltaTime);
-	}
+    }
 
     public Vector2 GetPositionOnFloor(float lerpValue)
     {
         return Vector2.Lerp(StartPosition, EndPosition, lerpValue);
+    }
+
+    public void OnCollisionStay2D(Collision2D collision)
+    {
     }
 }

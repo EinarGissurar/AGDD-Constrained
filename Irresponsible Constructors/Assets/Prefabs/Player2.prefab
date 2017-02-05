@@ -38,6 +38,8 @@ GameObject:
   - component: {fileID: 61287308540803178}
   - component: {fileID: 58189714182033032}
   - component: {fileID: 114406362601260644}
+  - component: {fileID: 114205742356694860}
+  - component: {fileID: 61904783431171858}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -100,6 +102,33 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.062119782}
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.29576042}
+--- !u!61 &61904783431171858
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128262494222834}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.42}
+--- !u!114 &114205742356694860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128262494222834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2390af179410c8e459caa131aa32f52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constructor: {fileID: 114406362601260644}
+  grabTransform: {fileID: 4290368907781604}
 --- !u!114 &114406362601260644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,6 +149,7 @@ MonoBehaviour:
   characterOffset: 0.3
   dotThresholdBreak: 0.7
   forceMagnitudeAppliedToFloor: 9.8
+  m_mass: 1
 --- !u!212 &212292308296707062
 SpriteRenderer:
   m_ObjectHideFlags: 1

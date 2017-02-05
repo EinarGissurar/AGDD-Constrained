@@ -31,6 +31,11 @@ public class ConstructorController : MonoBehaviour {
     [SerializeField]
     float forceMagnitudeAppliedToFloor = 9.8f;
 
+    [SerializeField]
+    float m_mass = 1f;
+
+    public float Mass { get { return m_mass; } set { m_mass = value; } }
+
     bool isLeft = false;
     bool isRight = false;
 
@@ -69,10 +74,6 @@ public class ConstructorController : MonoBehaviour {
 
             transform.position = floorController.GetPositionOnFloor(positionLerpValue) + floorController.Normal * characterOffset;
 
-            floorController.gameObject.GetComponent<Rigidbody2D>().AddForceAtPosition(-floorController.Normal * forceMagnitudeAppliedToFloor, transform.position);
-
-            Debug.Log(Vector2.Dot(floorController.RightDirection, Vector2.right));
-
             if (Vector2.Dot(floorController.RightDirection, Vector2.right) <= dotThresholdBreak)
                 floorController = null;
         }
@@ -82,6 +83,12 @@ public class ConstructorController : MonoBehaviour {
             foreach (var collider in colliders)
                 collider.enabled = true;
         }
+    }
+
+    public void FixedUpdate()
+    {
+        if(floorController != null)
+            floorController.gameObject.GetComponent<Rigidbody2D>().AddForceAtPosition(-floorController.Normal * forceMagnitudeAppliedToFloor * Mass, transform.position);
     }
 
     private void CalculatePositionLerpValue()

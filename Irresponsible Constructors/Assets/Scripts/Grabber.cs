@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(ConstructorController))]
 public class Grabber : MonoBehaviour
 {
-
     [SerializeField]
-    Rigidbody2D rigidBody;
+    ConstructorController constructor;
 
     [SerializeField]
     Transform grabTransform;
 
+    [SerializeField]
+    KeyCode grabCode;
+
     Grabable grabbed;
+    Grabable grabableInRange;
 
     // Use this for initialization
     void Start()
@@ -23,9 +26,12 @@ public class Grabber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(grabCode))
         {
-            Drop();
+            if (grabbed == null && grabableInRange != null)
+                Grab(grabableInRange);
+            else
+                Drop();
         }
     }
 
@@ -34,7 +40,7 @@ public class Grabber : MonoBehaviour
         if (this.grabbed == null && grabbed.transform.parent == null)
         {
             this.grabbed = grabbed;
-            rigidBody.mass = rigidBody.mass + grabbed.Mass;
+            constructor.Mass += grabbed.Mass;
             grabbed.transform.parent = grabTransform;
             grabbed.transform.position = grabTransform.position;
             grabbed.Grab();
@@ -46,17 +52,19 @@ public class Grabber : MonoBehaviour
         if (grabbed != null)
         {
             grabbed.transform.parent = null;
+            constructor.Mass -= grabbed.Mass;
             grabbed.Drop();
+            grabbed = null;
         }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Grabable  grabable = collision.gameObject.GetComponent<Grabable>();
+        Grabable grabable = collision.gameObject.GetComponent<Grabable>();
 
-        if(grabable != null)
+        if(grabable != null && grabable.transform.parent == null)
         {
-            Grab(grabable);
+            grabableInRange = grabable;
         }
     }
 }
