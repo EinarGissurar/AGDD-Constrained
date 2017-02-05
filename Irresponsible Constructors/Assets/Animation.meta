@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 7c6100e5eb87a7241b1e96946575999d
 folderAsset: yes
+<<<<<<< HEAD:Irresponsible Constructors/Assets/Animation.meta
 timeCreated: 1486299805
+=======
+timeCreated: 1486298295
+>>>>>>> 135d0890bbb7696aae0008653099e328d64ba00f:Irresponsible Constructors/Assets/Scripts.meta
 licenseType: Free
 DefaultImporter:
   userData: 
