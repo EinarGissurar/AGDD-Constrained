@@ -81,12 +81,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CubeSpawner.cs" />
-    <Compile Include="Assets\Grabable.cs" />
-    <Compile Include="Assets\Grabber.cs" />
-    <Compile Include="Assets\MassObject.cs" />
-    <Compile Include="Assets\PlayerController.cs" />
-    <Compile Include="Assets\SeeSawMechanic.cs" />
+    <Compile Include="Assets\ConstructorController.cs" />
+    <Compile Include="Assets\FloorController.cs" />
+    <Compile Include="Assets\Scripts1\CubeSpawner.cs" />
+    <Compile Include="Assets\Scripts1\Grabable.cs" />
+    <Compile Include="Assets\Scripts1\Grabber.cs" />
+    <Compile Include="Assets\Scripts1\MassObject.cs" />
+    <Compile Include="Assets\Scripts1\PlayerController.cs" />
+    <Compile Include="Assets\Scripts1\SeeSawMechanic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
