@@ -469,7 +469,7 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     UNet: 1
-  cloudProjectId: b8e0a270-b2bd-4f66-b8c7-b18ac12b882a
-  projectName: Irresponsible Constructors
-  organizationId: einar-orn-gissurarson
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
