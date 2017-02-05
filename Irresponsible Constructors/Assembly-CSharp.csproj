@@ -46,15 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BoxSpawner.cs" />
-     <Compile Include="Assets\ConstructorController.cs" />
-     <Compile Include="Assets\FloorController.cs" />
-     <Compile Include="Assets\Scripts1\CubeSpawner.cs" />
-     <Compile Include="Assets\Scripts1\Grabable.cs" />
-     <Compile Include="Assets\Scripts1\Grabber.cs" />
-     <Compile Include="Assets\Scripts1\MassObject.cs" />
-     <Compile Include="Assets\Scripts1\PlayerController.cs" />
-     <Compile Include="Assets\Scripts1\SeeSawMechanic.cs" />
+     <Compile Include="Assets\ConveyorBeltMove.cs" />
+     <Compile Include="Assets\Scripts\BoxSpawner.cs" />
+     <Compile Include="Assets\Scripts\ConstructorController.cs" />
+     <Compile Include="Assets\Scripts\FloorController.cs" />
+     <Compile Include="Assets\Scripts\Grabable.cs" />
+     <Compile Include="Assets\Scripts\Grabber.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
