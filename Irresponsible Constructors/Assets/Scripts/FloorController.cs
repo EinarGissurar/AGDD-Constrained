@@ -35,8 +35,4 @@ public class FloorController : MonoBehaviour
     {
         return Vector2.Lerp(StartPosition, EndPosition, lerpValue);
     }
-
-    public void OnCollisionStay2D(Collision2D collision)
-    {
-    }
 }
