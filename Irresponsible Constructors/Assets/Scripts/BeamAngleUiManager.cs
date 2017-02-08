@@ -23,6 +23,9 @@ public class BeamAngleUiManager : MonoBehaviour {
 	[SerializeField]
 	private FloorController floorController;
 
+	[SerializeField]
+	float redAngle = 40;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -37,12 +40,7 @@ public class BeamAngleUiManager : MonoBehaviour {
 		this.leftAngle.text += leftAngle.ToString () + "˚";
 		this.rightAngle.text += rightAngle.ToString () + "˚";
 
-		this.leftAngle.color = Color.blue;
-		this.rightAngle.color = Color.blue;
-
-		if ((int)leftAngle != 0)
-			this.leftAngle.color = floorController.LeftDirection.y < 0 ? Color.red : Color.green;
-		if ((int)rightAngle != 0)
-			this.rightAngle.color = floorController.RightDirection.y < 0 ? Color.red : Color.green;
+		this.leftAngle.color = Color.Lerp (Color.green, Color.red, (leftAngle) / (redAngle));
+		this.rightAngle.color = Color.Lerp (Color.green, Color.red, (rightAngle) / (redAngle));
 	}
 }
