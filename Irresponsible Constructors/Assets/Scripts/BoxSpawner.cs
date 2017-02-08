@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BoxSpawner : MonoBehaviour {
-	public float spawnInterval = 3.0f;
+	public float spawnInterval = 10.0f;
 	public GameObject box;
 	public Transform spawnPoint;
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("SpawnBox", 0f, spawnInterval);
+		InvokeRepeating ("SpawnBox", 5f, spawnInterval);
 	}
 	
 	// Update is called once per frame

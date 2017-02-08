@@ -46,9 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ConveyorBeltMove.cs" />
      <Compile Include="Assets\Scripts\BoxSpawner.cs" />
      <Compile Include="Assets\Scripts\ConstructorController.cs" />
+     <Compile Include="Assets\Scripts\ConveyorBeltMove.cs" />
      <Compile Include="Assets\Scripts\FloorController.cs" />
      <Compile Include="Assets\Scripts\Grabable.cs" />
      <Compile Include="Assets\Scripts\Grabber.cs" />
