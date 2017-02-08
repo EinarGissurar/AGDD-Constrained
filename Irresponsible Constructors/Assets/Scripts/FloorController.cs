@@ -8,7 +8,7 @@ public class FloorController : MonoBehaviour
     Transform startPoint;
 
     [SerializeField]
-    Transform endPoint;
+    Transform endPoint; 
 
     public Vector2 RightDirection { get { return (Vector2)(endPoint.position - startPoint.position).normalized; } }
     public Vector2 LeftDirection { get { return (Vector2)(startPoint.position - endPoint.position).normalized; } }

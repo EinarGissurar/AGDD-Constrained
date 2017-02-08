@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void ConstructorControllerAddedAction(ConstructorController controller);
+public delegate void ConstructorControllerDeletedAction();
+
 public class CubeManager : MonoBehaviour
 {
     [SerializeField]
@@ -23,6 +26,9 @@ public class CubeManager : MonoBehaviour
     FloorController floorController;
     ConstructorController constructorController;
     Collider2D[] colliders;
+
+    public event ConstructorControllerAddedAction ConstructorControllerAddedEvent;
+    public event ConstructorControllerDeletedAction ConstructorControllerDeletedEvent;
 
     void Awake()
     {
@@ -68,7 +74,6 @@ public class CubeManager : MonoBehaviour
     private void AddRigidBody()
     {
         rigidBody = gameObject.AddComponent<Rigidbody2D>();
-        rigidBody.mass = grabableScript.Mass;
     }
 
     private void RemoveRigidBody()
@@ -79,14 +84,25 @@ public class CubeManager : MonoBehaviour
 
     private void OnGrab()
     {
-        Destroy(constructorController);
         constructorController.BreakEvent -= OnDrop;
+        Destroy(constructorController);
+
+        if (ConstructorControllerDeletedEvent != null) 
+            ConstructorControllerDeletedEvent();
     }
 
     private void OnDrop()
     {
         rigidBody.bodyType = RigidbodyType2D.Dynamic;
         SetCollidersActive(true);
+
+        if(constructorController != null)
+        {
+            Destroy(constructorController);
+
+            if (ConstructorControllerDeletedEvent != null)
+                ConstructorControllerDeletedEvent();
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -107,6 +123,9 @@ public class CubeManager : MonoBehaviour
             constructorController.FloorController = floorController;
             constructorController.CalculatePositionLerpValue();
             constructorController.SetSettings(floorOffset, dotThresholdBreak, grabableScript.Mass, lerpSpeed);
+
+            if (ConstructorControllerAddedEvent != null)
+                ConstructorControllerAddedEvent(constructorController);
         }
     }
 
