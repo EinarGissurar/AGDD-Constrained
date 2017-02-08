@@ -45,8 +45,6 @@ public class CubeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rigidBody != null)
-            Debug.Log("Velocity:" + rigidBody.velocity);
     }
 
     public void OnEnable()
@@ -105,6 +103,22 @@ public class CubeManager : MonoBehaviour
         }
     }
 
+	private void OnBreak()
+	{
+		rigidBody.bodyType = RigidbodyType2D.Dynamic;
+		SetCollidersActive(true);
+
+		if(constructorController != null)
+		{
+			Destroy(constructorController);
+
+			if (ConstructorControllerDeletedEvent != null)
+				ConstructorControllerDeletedEvent();
+		}
+
+		Destroy (this);
+	}
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (constructorController != null)
@@ -119,7 +133,7 @@ public class CubeManager : MonoBehaviour
             rigidBody.velocity = Vector2.zero;
             rigidBody.angularVelocity = 0;
             constructorController = gameObject.AddComponent<ConstructorController>();
-            constructorController.BreakEvent += OnDrop;
+            constructorController.BreakEvent += OnBreak;
             constructorController.FloorController = floorController;
             constructorController.CalculatePositionLerpValue();
             constructorController.SetSettings(floorOffset, dotThresholdBreak, grabableScript.Mass, lerpSpeed);

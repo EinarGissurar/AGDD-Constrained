@@ -8,7 +8,10 @@ public class FloorController : MonoBehaviour
     Transform startPoint;
 
     [SerializeField]
-    Transform endPoint; 
+    Transform endPoint;
+
+	[SerializeField]
+	Rigidbody2D rb;
 
     public Vector2 RightDirection { get { return (Vector2)(endPoint.position - startPoint.position).normalized; } }
     public Vector2 LeftDirection { get { return (Vector2)(startPoint.position - endPoint.position).normalized; } }
@@ -28,6 +31,12 @@ public class FloorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		
+		if (Vector2.Dot(RightDirection, Vector2.right) <= 0.4)
+		{
+			Destroy (this);
+			rb.constraints = RigidbodyConstraints2D.None;
+		}
     }
 
     public Vector2 GetPositionOnFloor(float lerpValue)
