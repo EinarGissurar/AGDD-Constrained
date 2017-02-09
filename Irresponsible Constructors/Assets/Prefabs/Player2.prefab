@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constructor: {fileID: 114406362601260644}
-  inputMananger: {fileID: 0}
+  inputMananger: {fileID: 114190507686584444}
   grabTransform: {fileID: 4290368907781604}
   grabCode: 115
   throwForce: 100

@@ -100,7 +100,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4440808061175878, guid: ce580121fac044673ae9abfed003f7ab, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: 4440808061175878, guid: ce580121fac044673ae9abfed003f7ab, type: 2}
       propertyPath: m_LocalPosition.y
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2839d753204e244b6b4013e1a3ed5a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 2
+  velocity: 4.05
 --- !u!61 &690132724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 690132722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d39fa069fd014fd2ae408b0b2b5f8b0, type: 3}
+  m_Script: {fileID: 11500000, guid: f9b88179529b8440c8a106bf50d9a983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
@@ -781,11 +781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36cc62b20ded0487bb1bffc9feda9c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 10
+  spawnInterval: 2
   box: {fileID: 1488238960359976, guid: c69368d0abe40054ea664fbd596a30fa, type: 2}
   spawnPoint: {fileID: 688031706}
-  challenges:
-  - 1
-  - 2
-  - 3
-  - 4
