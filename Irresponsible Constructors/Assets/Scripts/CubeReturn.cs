@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //temp gamemanager mock while waiting for other code..
-public class CrateReturn : MonoBehaviour {
+public class CubeReturn : MonoBehaviour {
 	public float score;
+	public delegate void CubeReturned();
+	public static event CubeReturned onCubeReturned;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +22,9 @@ public class CrateReturn : MonoBehaviour {
 		score++;
 		Debug.Log (" Entered conveyor");
 		Debug.Log (score);
+		if (onCubeReturned != null) {
+			onCubeReturned ();
+		}
 
 	}
 

@@ -50,8 +50,8 @@
      <Compile Include="Assets\Scripts\ConstructorController.cs" />
      <Compile Include="Assets\Scripts\ConstructorManager.cs" />
      <Compile Include="Assets\Scripts\ConveyorBeltMove.cs" />
-     <Compile Include="Assets\Scripts\CrateReturn.cs" />
      <Compile Include="Assets\Scripts\CubeManager.cs" />
+     <Compile Include="Assets\Scripts\CubeReturn.cs" />
      <Compile Include="Assets\Scripts\FloorController.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Grabable.cs" />
