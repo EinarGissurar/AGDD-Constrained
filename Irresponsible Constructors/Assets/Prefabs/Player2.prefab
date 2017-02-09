@@ -40,6 +40,8 @@ GameObject:
   - component: {fileID: 114406362601260644}
   - component: {fileID: 114205742356694860}
   - component: {fileID: 61904783431171858}
+  - component: {fileID: 114190507686584444}
+  - component: {fileID: 114498201966669498}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -67,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1128262494222834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.26, z: 0}
+  m_LocalPosition: {x: -2.7, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4290368907781604}
@@ -116,6 +118,21 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.42}
+--- !u!114 &114190507686584444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128262494222834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9170046562c2c39418b10402c0e32f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: 100
+  left: 97
+  spriteRenderer: {fileID: 212292308296707062}
+  constructorController: {fileID: 114406362601260644}
 --- !u!114 &114205742356694860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   constructor: {fileID: 114406362601260644}
   grabTransform: {fileID: 4290368907781604}
+  grabCode: 115
 --- !u!114 &114406362601260644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,15 +159,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorController: {fileID: 0}
-  right: 275
-  left: 276
-  speed: 2
-  mass: 1
-  spriteRenderer: {fileID: 212292308296707062}
-  characterOffset: 0.3
+  floorOffset: 0.3
   dotThresholdBreak: 0.7
   forceMagnitudeAppliedToFloor: 9.8
   m_mass: 1
+  lerpSpeed: 0.1
+  calculateLerpOnAwake: 1
+--- !u!114 &114498201966669498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128262494222834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7624325f321d4abcbb287ab026c2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constructorController: {fileID: 114406362601260644}
 --- !u!212 &212292308296707062
 SpriteRenderer:
   m_ObjectHideFlags: 1

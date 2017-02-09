@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ConstructorController))]
+
 public class Grabber : MonoBehaviour
 {
     [SerializeField]
@@ -64,6 +64,7 @@ public class Grabber : MonoBehaviour
 
         if(grabable != null && grabable.transform.parent == null)
         {
+            Debug.Log("Grabbable in sight!");
             grabableInRange = grabable;
         }
     }

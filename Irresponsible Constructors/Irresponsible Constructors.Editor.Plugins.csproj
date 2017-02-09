@@ -124,6 +124,10 @@
       <Project>{6FB4D4C1-5DB2-5A61-F0F3-DFD209C0794D}</Project>
       <Name>Irresponsible Constructors.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="Irresponsible Constructors.csproj">
+      <Project>{AA8B8FB8-12DC-5067-0FC9-29C60185838A}</Project>
+      <Name>Irresponsible Constructors</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />

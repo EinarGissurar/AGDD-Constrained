@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void GrabAction();
+public delegate void DropAction();
 
 public class Grabable : MonoBehaviour {
 
@@ -9,11 +11,14 @@ public class Grabable : MonoBehaviour {
 
     [SerializeField]
     float mass;
+
     public float Mass { get { return mass; } set { mass = value; } }
+
+    public event GrabAction GrabEvent;
+    public event DropAction DropEvent;
 
     void Awake()
     {
-        AddRigidBody();
     }
 
 	// Use this for initialization
@@ -28,22 +33,13 @@ public class Grabable : MonoBehaviour {
 
     public void Grab()
     {
-        RemoveRigidBody();
+        if (GrabEvent != null)
+            GrabEvent();
     }
 
     public void Drop()
     {
-        AddRigidBody();
-    }
-
-    private void AddRigidBody()
-    {
-        rigidBody = gameObject.AddComponent<Rigidbody2D>();
-        rigidBody.mass = mass;
-    }
-
-    private void RemoveRigidBody()
-    {
-        Destroy(rigidBody);
+        if (DropEvent != null)
+            DropEvent();
     }
 }

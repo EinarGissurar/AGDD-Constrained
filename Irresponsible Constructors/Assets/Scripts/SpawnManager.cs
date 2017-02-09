@@ -6,6 +6,7 @@ public class BoxSpawner : MonoBehaviour {
 	public float spawnInterval = 10.0f;
 	public GameObject box;
 	public Transform spawnPoint;
+	public float[] challenges = {1,2,3,4};
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,7 @@ public class BoxSpawner : MonoBehaviour {
 	void SpawnBox(){
 		
 		//check if game is over?
-		Instantiate (box, spawnPoint.position, spawnPoint.rotation);
+		GameObject temp = Instantiate (box, spawnPoint.position, spawnPoint.rotation);
 	}
 	
 }
