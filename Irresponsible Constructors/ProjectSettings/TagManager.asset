@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Sky
+    uniqueID: 1666831737
+    locked: 0
+  - name: Cranes
+    uniqueID: 3691024979
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
