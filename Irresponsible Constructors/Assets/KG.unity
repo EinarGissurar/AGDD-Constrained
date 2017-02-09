@@ -134,6 +134,11 @@ Prefab:
       propertyPath: m_Name
       value: ConveyorBeltStart
       objectReference: {fileID: 0}
+    - target: {fileID: 114906587979601538, guid: ce580121fac044673ae9abfed003f7ab,
+        type: 2}
+      propertyPath: velocity
+      value: 4.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce580121fac044673ae9abfed003f7ab, type: 2}
   m_IsPrefabParent: 0
@@ -251,7 +256,14 @@ Prefab:
       propertyPath: m_Name
       value: BoxManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114056008677527948, guid: 6b331838b2d404996a1e4ced296ce2a5,
+        type: 2}
+      propertyPath: box
+      value: 
+      objectReference: {fileID: 1488238960359976, guid: c69368d0abe40054ea664fbd596a30fa,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 114056008677527948, guid: 6b331838b2d404996a1e4ced296ce2a5, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6b331838b2d404996a1e4ced296ce2a5, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &590273380
@@ -299,6 +311,7 @@ GameObject:
   - component: {fileID: 690132725}
   - component: {fileID: 690132724}
   - component: {fileID: 690132723}
+  - component: {fileID: 690132727}
   m_Layer: 0
   m_Name: ConveyorBeltGoal
   m_TagString: Untagged
@@ -384,6 +397,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690132727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 690132722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d39fa069fd014fd2ae408b0b2b5f8b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!1 &769952417
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1227398040}
   endPoint: {fileID: 590273381}
+  rb: {fileID: 0}
 --- !u!1 &1071331855
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +754,38 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4995892960232890, guid: c69368d0abe40054ea664fbd596a30fa, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4995892960232890, guid: c69368d0abe40054ea664fbd596a30fa, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c69368d0abe40054ea664fbd596a30fa, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1997977922 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1531798535029580, guid: 6b331838b2d404996a1e4ced296ce2a5,
+    type: 2}
+  m_PrefabInternal: {fileID: 484347118}
+--- !u!114 &1997977923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1997977922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36cc62b20ded0487bb1bffc9feda9c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnInterval: 10
+  box: {fileID: 1488238960359976, guid: c69368d0abe40054ea664fbd596a30fa, type: 2}
+  spawnPoint: {fileID: 688031706}
+  challenges:
+  - 1
+  - 2
+  - 3
+  - 4

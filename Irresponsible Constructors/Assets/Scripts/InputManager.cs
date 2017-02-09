@@ -20,6 +20,8 @@ public class InputManager : MonoBehaviour {
     bool isLeft = false;
     bool isRight = false;
 
+    public bool IsRight { get { return !spriteRenderer.flipX; } }
+
     // Use this for initialization
     void Start () {
 		
@@ -41,6 +43,8 @@ public class InputManager : MonoBehaviour {
         }
 
         if (isInput)
+        {
             spriteRenderer.flipX = isLeft;
+        }
     }
 }

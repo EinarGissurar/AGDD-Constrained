@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void ConstructorControllerAddedAction(ConstructorController controller);
+public delegate void ConstructorControllerDeletedAction();
+
 public class CubeManager : MonoBehaviour
 {
     [SerializeField]
@@ -24,6 +27,9 @@ public class CubeManager : MonoBehaviour
     ConstructorController constructorController;
     Collider2D[] colliders;
 
+    public event ConstructorControllerAddedAction ConstructorControllerAddedEvent;
+    public event ConstructorControllerDeletedAction ConstructorControllerDeletedEvent;
+
     void Awake()
     {
         AddRigidBody();
@@ -39,9 +45,6 @@ public class CubeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (rigidBody != null) {
-		}
-            //Debug.Log("Velocity:" + rigidBody.velocity);
     }
 
     public void OnEnable()
@@ -69,7 +72,6 @@ public class CubeManager : MonoBehaviour
     private void AddRigidBody()
     {
         rigidBody = gameObject.AddComponent<Rigidbody2D>();
-        rigidBody.mass = grabableScript.Mass;
     }
 
     private void RemoveRigidBody()
@@ -80,15 +82,42 @@ public class CubeManager : MonoBehaviour
 
     private void OnGrab()
     {
-        Destroy(constructorController);
         constructorController.BreakEvent -= OnDrop;
+        Destroy(constructorController);
+
+        if (ConstructorControllerDeletedEvent != null) 
+            ConstructorControllerDeletedEvent();
     }
 
     private void OnDrop()
     {
         rigidBody.bodyType = RigidbodyType2D.Dynamic;
         SetCollidersActive(true);
+
+        if(constructorController != null)
+        {
+            Destroy(constructorController);
+
+            if (ConstructorControllerDeletedEvent != null)
+                ConstructorControllerDeletedEvent();
+        }
     }
+
+	private void OnBreak()
+	{
+		rigidBody.bodyType = RigidbodyType2D.Dynamic;
+		SetCollidersActive(true);
+
+		if(constructorController != null)
+		{
+			Destroy(constructorController);
+
+			if (ConstructorControllerDeletedEvent != null)
+				ConstructorControllerDeletedEvent();
+		}
+
+		Destroy (this);
+	}
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -104,10 +133,13 @@ public class CubeManager : MonoBehaviour
             rigidBody.velocity = Vector2.zero;
             rigidBody.angularVelocity = 0;
             constructorController = gameObject.AddComponent<ConstructorController>();
-            constructorController.BreakEvent += OnDrop;
+            constructorController.BreakEvent += OnBreak;
             constructorController.FloorController = floorController;
             constructorController.CalculatePositionLerpValue();
             constructorController.SetSettings(floorOffset, dotThresholdBreak, grabableScript.Mass, lerpSpeed);
+
+            if (ConstructorControllerAddedEvent != null)
+                ConstructorControllerAddedEvent(constructorController);
         }
     }
 

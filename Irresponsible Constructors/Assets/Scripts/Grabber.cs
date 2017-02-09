@@ -9,10 +9,16 @@ public class Grabber : MonoBehaviour
     ConstructorController constructor;
 
     [SerializeField]
+    InputManager inputMananger;
+
+    [SerializeField]
     Transform grabTransform;
 
     [SerializeField]
     KeyCode grabCode;
+
+    [SerializeField]
+    float throwForce = 100;
 
     Grabable grabbed;
     Grabable grabableInRange;
@@ -54,6 +60,14 @@ public class Grabber : MonoBehaviour
             grabbed.transform.parent = null;
             constructor.Mass -= grabbed.Mass;
             grabbed.Drop();
+            Rigidbody2D rigidBody = grabbed.GetComponent<Rigidbody2D>();
+
+            if (rigidBody != null)
+            {
+                int multiplier = inputMananger.IsRight ? 1 : -1;
+                rigidBody.AddForce(new Vector2(multiplier * 1,1) * throwForce);
+            }
+
             grabbed = null;
         }
     }
@@ -64,7 +78,6 @@ public class Grabber : MonoBehaviour
 
         if(grabable != null && grabable.transform.parent == null)
         {
-            Debug.Log("Grabbable in sight!");
             grabableInRange = grabable;
         }
     }

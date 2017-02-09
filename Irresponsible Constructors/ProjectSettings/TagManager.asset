@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 1774087803
+    locked: 0
+  - name: Beam
+    uniqueID: 3637929127
+    locked: 0
+  - name: Cubes
+    uniqueID: 2768779527
+    locked: 0
+  - name: Rope
+    uniqueID: 1656110241
+    locked: 0

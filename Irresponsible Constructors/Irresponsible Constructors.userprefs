@@ -1,5 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ConveyorBeltMove.cs">
     <Files>
       <File FileName="Assets/Scripts/Grabber.cs" Line="57" Column="28" />
@@ -19,6 +20,17 @@
     <BreakpointStore>
       <RunToCursorBreakpoint file="/Users/kristinngudmundsson/Documents/gameDesign/AGDD-Constrained/Irresponsible Constructors/Assets/Scripts/BoxSpawner.cs" line="21" column="18" />
     </BreakpointStore>
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FloorController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\FloorController.cs" Line="35" Column="57" />
+      <File FileName="Assets\Scripts\CubeManager.cs" Line="13" Column="21" />
+      <File FileName="Assets\Scripts\ConstructorController.cs" Line="55" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+>>>>>>> 6889ceb946ebe84098f505036db380b8630f93f6
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
