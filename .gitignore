@@ -7,6 +7,8 @@
 /[Ll]ibrary/
 sysinfo.txt
 *.stackdump
+
+Assets/Meshes.meta
  
 # ============================================= #
 # Visual Studio / MonoDevelop / Rider generated #
@@ -30,6 +32,11 @@ sysinfo.txt
 ._*
 .Spotlight-V100
 .Trashes
+Icon?
 ehthumbs.db
 [Tt]humbs.db
 [Dd]esktop.ini
+
+# Personal Playground Scenes
+Assets/sjl.unity
+Assets/sjl.unity.meta
