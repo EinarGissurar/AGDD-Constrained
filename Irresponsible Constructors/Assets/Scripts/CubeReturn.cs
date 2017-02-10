@@ -5,8 +5,10 @@ using UnityEngine;
 //temp gamemanager mock while waiting for other code..
 public class CubeReturn : MonoBehaviour {
 	public float score;
+
 	public delegate void CubeReturned();
 	public static event CubeReturned onCubeReturned;
+	private List<int> cubesReturned = new List<int>();
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +21,14 @@ public class CubeReturn : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col){
-		score++;
-		Debug.Log (" Entered conveyor");
-		Debug.Log (score);
-		if (onCubeReturned != null) {
+		//col.gameObject.GetInstanceID ();
+
+		if (onCubeReturned != null && !cubesReturned.Contains(col.gameObject.GetInstanceID ())) {
+			cubesReturned.Add (col.gameObject.GetInstanceID ());
 			onCubeReturned ();
+			score++;
+			Debug.Log (" Entered conveyor");
+			Debug.Log (score);
 		}
 
 	}

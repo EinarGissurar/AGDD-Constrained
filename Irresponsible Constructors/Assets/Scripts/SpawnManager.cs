@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour {
 	//private List<float> challenges = new {1,2,3,4};
 	private int challenge = 1;//start with 1 box already on screen
 	private int spawns = 0;
-	private int currentlySpawned = 0;
+	private int currentlySpawned = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -35,12 +35,15 @@ public class SpawnManager : MonoBehaviour {
 	}
 
 	void TriggerNextSpawn(){
-		Debug.Log ("spawn triggered");
+		currentlySpawned--;
+		Debug.Log ("spawn triggered, currently on screen: " + currentlySpawned);
 		if (currentlySpawned != 0)
 			return;
-		
+
 		challenge++;
-		Debug.Log (challenge);
+		Debug.Log ("about to spawn boxes : " + challenge);
+
+		Debug.Log ("challenge is: " + challenge);
 		currentlySpawned = challenge;
 		spawns = challenge;
 		InvokeRepeating ("SpawnBox", 0f, spawnInterval);
