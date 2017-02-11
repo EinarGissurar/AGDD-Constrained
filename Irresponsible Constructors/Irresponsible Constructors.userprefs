@@ -1,6 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
 <<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AudioManager.cs">
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ConveyorBeltMove.cs">
     <Files>
@@ -26,11 +29,14 @@
 =======
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BeamAngleUiManager.cs">
 >>>>>>> ca6552020d8895df61c0d90bcf504b147c12c326
+>>>>>>> 91bf27d9b6cbe557c21d114348875d06c217e349
     <Files>
-      <File FileName="Assets\Scripts\FloorController.cs" Line="17" Column="49" />
+      <File FileName="Assets\Scripts\FloorController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CubeManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ConstructorController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BeamAngleUiManager.cs" Line="45" Column="3" />
+      <File FileName="Assets\Scripts\BeamAngleUiManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\AudioManager.cs" Line="8" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
