@@ -51,6 +51,10 @@ public class ConstructorController : MonoBehaviour {
 	void onDisable() {
 		gameManager.TimeOutEvent -= OnTimeOut;
 	}
+
+	void OnDestroy() {
+		gameManager.TimeOutEvent -= OnTimeOut;
+	}
 	
 	// Update is called once per frame
 	void Update ()

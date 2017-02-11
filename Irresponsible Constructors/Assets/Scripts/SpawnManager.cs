@@ -15,7 +15,7 @@ public class SpawnManager : MonoBehaviour {
 	void Start () {
 		//InvokeRepeating ("SpawnBox", 5f, spawnInterval);
 		//SpawnBox();
-		//TriggerNextSpawn();//skip since first box should already be spawned?
+		TriggerNextSpawn();//skip since first box should already be spawned?
 		onEnable();//need to disable or it might memory leak?
 	}
 	
