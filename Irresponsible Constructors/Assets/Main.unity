@@ -1879,11 +1879,6 @@ Prefab:
       propertyPath: floorController
       value: 
       objectReference: {fileID: 2138224518}
-    - target: {fileID: 114406362601260644, guid: ef13061e66f0c914587ce5dc9dcd01cf,
-        type: 2}
-      propertyPath: floorOffset
-      value: 0.35
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef13061e66f0c914587ce5dc9dcd01cf, type: 2}
   m_IsPrefabParent: 0
@@ -2377,7 +2372,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4656736822979568, guid: 0382ff2c246a84820a6ae6cc649ab973, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.31
+      value: -3.57
       objectReference: {fileID: 0}
     - target: {fileID: 4656736822979568, guid: 0382ff2c246a84820a6ae6cc649ab973, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2448,7 +2443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constructorController: {fileID: 1193036191}
-  startTimer: 5
+  startTimer: 60
   timerText: {fileID: 1197447550}
   anim: {fileID: 444540456}
 --- !u!4 &1908088270
