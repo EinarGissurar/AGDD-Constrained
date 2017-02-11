@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public delegate void PlayersWin();
+public delegate void PlayersLose();
+
 public class GameManager : MonoBehaviour {
 
     public float startTimer;
@@ -12,6 +15,9 @@ public class GameManager : MonoBehaviour {
     public Text timerText;
 
     public Animator anim;
+
+	public event PlayersWin PlayersWinEvent;
+	public event PlayersLose PlayersLoseEvent;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +32,7 @@ public class GameManager : MonoBehaviour {
         minutes = Mathf.Floor(countDown / 60);
         seconds = countDown % 60;
         timerText.text = string.Format("{0:0}:{1:00}", minutes, seconds);
-
+		
         if (countDown <= 0 || Input.GetKeyUp(KeyCode.Escape)) {
             print("GAME OVER!");
             anim.SetTrigger("GameOver");
