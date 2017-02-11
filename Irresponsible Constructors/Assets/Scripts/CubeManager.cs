@@ -151,4 +151,17 @@ public class CubeManager : MonoBehaviour
                 collider.enabled = isActive;
         }
     }
+
+	private void OnBecameInvisible()
+	{
+
+		//lose game?
+		if (!CubeReturn.cubesReturned.Contains (this.gameObject.GetInstanceID ())) {
+			Debug.Log ("Box fell down, player should lose");
+		} 
+		else {//for debugging purposes, can be removed
+			Debug.Log ("Box returned normally");
+		}
+		DestroyObject(this.gameObject);
+	}
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 //temp gamemanager mock while waiting for other code..
 public class CubeReturn : MonoBehaviour {
-	public float score;
+	//public float score;
 
 	public delegate void CubeReturned();
 	public static event CubeReturned onCubeReturned;
-	private List<int> cubesReturned = new List<int>();
+	public static List<int> cubesReturned = new List<int>();
 
 	// Use this for initialization
 	void Start () {
-		score = 0;
+		//score = 0;
 	}
 	
 	// Update is called once per frame
@@ -26,11 +26,18 @@ public class CubeReturn : MonoBehaviour {
 		if (onCubeReturned != null && !cubesReturned.Contains(col.gameObject.GetInstanceID ())) {
 			cubesReturned.Add (col.gameObject.GetInstanceID ());
 			onCubeReturned ();
-			score++;
+			//score++;
+			ScoreManager.score += 1;
 			Debug.Log (" Entered conveyor");
-			Debug.Log (score);
+			//Debug.Log (score);
 		}
 
+	}
+
+	void OnCollisionExit2D(Collision2D col){
+
+		//DestroyObject(col.gameObject);
+		//Debug.Log ("cube left goal line, should despawn");
 	}
 
 
