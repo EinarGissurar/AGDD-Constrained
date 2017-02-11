@@ -81,15 +81,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ConstructorController.cs" />
-    <Compile Include="Assets\FloorController.cs" />
-    <Compile Include="Assets\Scripts1\CubeSpawner.cs" />
-    <Compile Include="Assets\Scripts1\GameManager.cs" />
-    <Compile Include="Assets\Scripts1\Grabable.cs" />
-    <Compile Include="Assets\Scripts1\Grabber.cs" />
-    <Compile Include="Assets\Scripts1\MassObject.cs" />
-    <Compile Include="Assets\Scripts1\PlayerController.cs" />
-    <Compile Include="Assets\Scripts1\SeeSawMechanic.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\BeamAngleUiManager.cs" />
+    <Compile Include="Assets\Scripts\ConstructorController.cs" />
+    <Compile Include="Assets\Scripts\ConstructorManager.cs" />
+    <Compile Include="Assets\Scripts\ConveyorBeltMove.cs" />
+    <Compile Include="Assets\Scripts\CubeManager.cs" />
+    <Compile Include="Assets\Scripts\CubeReturn.cs" />
+    <Compile Include="Assets\Scripts\FloorController.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Grabable.cs" />
+    <Compile Include="Assets\Scripts\Grabber.cs" />
+    <Compile Include="Assets\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\SlideScript.cs" />
+    <Compile Include="Assets\Scripts\SpawnManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
