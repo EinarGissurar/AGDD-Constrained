@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public delegate void PlayersWin();
 public delegate void PlayersLose();
+public delegate void TimeOut();
 
 public class GameManager : MonoBehaviour {
 
@@ -18,11 +19,13 @@ public class GameManager : MonoBehaviour {
     public Text timerText;
 
     private bool hasPlayed;
+	private bool isGameOver = false;
 
     public Animator anim;
 
 	public event PlayersWin PlayersWinEvent;
 	public event PlayersLose PlayersLoseEvent;
+	public event TimeOut TimeOutEvent;
 
 	// Use this for initialization
 	void Start () {
@@ -39,8 +42,11 @@ public class GameManager : MonoBehaviour {
             timerText.text = string.Format("TIME: {0:0}:{1:00}", minutes, seconds);
         }
         else {
-            if (!hasPlayed) {
-                GameWon();
+			if (!hasPlayed && !isGameOver) {
+				if (TimeOutEvent != null)
+					TimeOutEvent ();
+				
+				GameLost();
                 hasPlayed = true;
             }
         }
@@ -63,6 +69,8 @@ public class GameManager : MonoBehaviour {
     }
 
     void GameLost() {
+		isGameOver = true;
+		UnSubscribe ();
         if (PlayersLoseEvent != null) {
             PlayersLoseEvent();
         }
@@ -70,6 +78,8 @@ public class GameManager : MonoBehaviour {
     }
 
     void GameWon() {
+		isGameOver = true;
+		UnSubscribe ();
         if (PlayersWinEvent != null) {
             PlayersWinEvent();
         }
