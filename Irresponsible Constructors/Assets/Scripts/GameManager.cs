@@ -19,7 +19,8 @@ public class GameManager : MonoBehaviour {
     public Text timerText;
 
     private bool hasPlayed;
-	private bool isGameOver = false;
+    private bool isGameOver;
+    private bool timeLow;
 
     public Animator anim;
 
@@ -31,11 +32,21 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         countDown = startTimer;
         hasPlayed = false;
+        timeLow = false;
+        isGameOver = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
         countDown -= Time.deltaTime;
+
+        if (countDown <= 10) {
+            if (!timeLow) {
+                timeLow = true;
+                anim.SetTrigger("TimeOut");
+            }
+        }
+
         if (countDown >= 0) {
             minutes = Mathf.Floor(countDown / 60);
             seconds = countDown % 60;
