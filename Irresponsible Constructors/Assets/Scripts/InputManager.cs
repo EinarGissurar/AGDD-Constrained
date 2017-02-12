@@ -16,6 +16,9 @@ public class InputManager : MonoBehaviour {
     [SerializeField]
     ConstructorController constructorController;
 
+	[SerializeField]
+	Transform grabTransform;
+	float originalGrabTransformPositionX;
 
     bool isLeft = false;
     bool isRight = false;
@@ -24,7 +27,8 @@ public class InputManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+		originalGrabTransformPositionX = grabTransform.localPosition.x;
+		Debug.Log (originalGrabTransformPositionX);
 	}
 	
 	// Update is called once per frame
@@ -45,6 +49,8 @@ public class InputManager : MonoBehaviour {
         if (isInput)
         {
             spriteRenderer.flipX = isLeft;
+			float x = isLeft ? -originalGrabTransformPositionX : originalGrabTransformPositionX;
+			grabTransform.localPosition = new Vector3 (x, grabTransform.localPosition.y, grabTransform.localPosition.z);
         }
     }
 }
