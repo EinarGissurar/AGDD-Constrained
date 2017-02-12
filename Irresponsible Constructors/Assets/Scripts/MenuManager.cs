@@ -23,7 +23,7 @@ public class MenuManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Return)) {
+		if (Input.GetKeyDown (KeyCode.Return) && menuButtons[selectedIndex].isActiveAndEnabled) {
 			menuButtons [selectedIndex].onClick.Invoke ();
 		}
 		if (Input.GetKeyDown (KeyCode.UpArrow)) {
