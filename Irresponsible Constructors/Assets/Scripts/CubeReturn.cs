@@ -27,7 +27,7 @@ public class CubeReturn : MonoBehaviour {
 			cubesReturned.Add (col.gameObject.GetInstanceID ());
 			onCubeReturned ();
 			//score++;
-			ScoreManager.score += 1;
+			ScoreManager.newScore += 1;
 			Debug.Log (" Entered conveyor");
 			//Debug.Log (score);
 		}

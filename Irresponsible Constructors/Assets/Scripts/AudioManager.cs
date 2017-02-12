@@ -42,6 +42,7 @@ public class AudioManager : MonoBehaviour {
 
 	private void OnLoss() 
 	{
+		Debug.Log ("on loss was triggered");
 		musicSource.Stop ();
 		loseSound.Play ();
 	}
