@@ -43,12 +43,12 @@ public class AudioManager : MonoBehaviour {
 	private void OnLoss() 
 	{
 		musicSource.Stop ();
-		winSound.Play ();
+		loseSound.Play ();
 	}
 
 	private void OnWin()
 	{
 		musicSource.Stop ();
-		loseSound.Play ();
+		winSound.Play ();
 	}
 }

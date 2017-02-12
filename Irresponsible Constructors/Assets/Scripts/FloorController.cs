@@ -22,11 +22,25 @@ public class FloorController : MonoBehaviour
 
     public Vector2 EndPosition { get { return endPoint.position; } }
 
+	GameManager gamemanger;
+
+	void Awake() {
+		gamemanger = FindObjectOfType<GameManager> ();
+	}
+
     // Use this for initialization
     void Start()
     {
 
     }
+
+	void OnEnable() {
+		gamemanger.TimeOutEvent += OnTimeOut;
+	}
+
+	void OnDisable() {
+		gamemanger.TimeOutEvent -= OnTimeOut;
+	}
 
     // Update is called once per frame
     void Update()
@@ -43,4 +57,8 @@ public class FloorController : MonoBehaviour
     {
         return Vector2.Lerp(StartPosition, EndPosition, lerpValue);
     }
+
+	private void OnTimeOut() {
+		rb.constraints = RigidbodyConstraints2D.FreezeAll;
+	}
 }

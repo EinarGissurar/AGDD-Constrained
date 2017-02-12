@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Main.unity
-=======
-- path: Assets/KG.unity
->>>>>>> 91bf27d9b6cbe557c21d114348875d06c217e349
   isLoaded: 1
   isActive: 1

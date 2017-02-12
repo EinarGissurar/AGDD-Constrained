@@ -34,16 +34,27 @@ public class ConstructorController : MonoBehaviour {
 
     float positionLerpValue;
 
+	GameManager gameManager;
+
     void Awake()
     {
         if (calculateLerpOnAwake)
             CalculatePositionLerpValue();
+
+		gameManager = FindObjectOfType<GameManager> ();
     }
 
-    // Use this for initialization
-    void Start ()
-    {
-    }
+	void OnEnable() {
+		gameManager.TimeOutEvent += OnTimeOut;
+	}
+
+	void onDisable() {
+		gameManager.TimeOutEvent -= OnTimeOut;
+	}
+
+	void OnDestroy() {
+		gameManager.TimeOutEvent -= OnTimeOut;
+	}
 	
 	// Update is called once per frame
 	void Update ()
@@ -90,4 +101,8 @@ public class ConstructorController : MonoBehaviour {
         m_mass = mass;
         this.lerpSpeed = lerpSpeed;
     }
+
+	public void OnTimeOut() {
+		enabled = false;
+	}
 }

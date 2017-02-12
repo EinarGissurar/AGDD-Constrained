@@ -162,6 +162,6 @@ public class CubeManager : MonoBehaviour
 		else {//for debugging purposes, can be removed
 			Debug.Log ("Box returned normally");
 		}
-		DestroyObject(this.gameObject);
+		Destroy(this.gameObject);
 	}
 }
