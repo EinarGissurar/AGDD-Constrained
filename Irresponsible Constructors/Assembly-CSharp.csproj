@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Grabable.cs" />
      <Compile Include="Assets\Scripts\Grabber.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
+     <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\SlideScript.cs" />
      <Compile Include="Assets\Scripts\SpawnManager.cs" />

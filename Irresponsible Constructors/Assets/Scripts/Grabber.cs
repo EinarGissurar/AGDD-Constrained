@@ -65,7 +65,7 @@ public class Grabber : MonoBehaviour
             if (rigidBody != null)
             {
                 int multiplier = inputMananger.IsRight ? 1 : -1;
-                rigidBody.AddForce(new Vector2(multiplier * 1,1) * throwForce);
+                rigidBody.AddForce(new Vector2(multiplier * 1,2) * throwForce);
             }
 
             grabbed = null;

@@ -158,6 +158,7 @@ public class CubeManager : MonoBehaviour
 		//lose game?
 		if (!CubeReturn.cubesReturned.Contains (this.gameObject.GetInstanceID ())) {
 			Debug.Log ("Box fell down, player should lose");
+			ScoreManager.score -= 1;
 		} 
 		else {//for debugging purposes, can be removed
 			Debug.Log ("Box returned normally");

@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1121778225109358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.017, z: 0}
+  m_LocalPosition: {x: 0.147, y: 0.046, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4430673810290262}
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1128262494222834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7, y: 0.44, z: 0}
+  m_LocalPosition: {x: 2.7, y: 0.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4290368907781604}
@@ -129,10 +129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9170046562c2c39418b10402c0e32f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  right: 100
-  left: 97
+  right: 108
+  left: 106
   spriteRenderer: {fileID: 212292308296707062}
   constructorController: {fileID: 114406362601260644}
+  grabTransform: {fileID: 4290368907781604}
 --- !u!114 &114205742356694860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,7 +148,7 @@ MonoBehaviour:
   constructor: {fileID: 114406362601260644}
   inputMananger: {fileID: 114190507686584444}
   grabTransform: {fileID: 4290368907781604}
-  grabCode: 115
+  grabCode: 107
   throwForce: 100
 --- !u!114 &114406362601260644
 MonoBehaviour:
