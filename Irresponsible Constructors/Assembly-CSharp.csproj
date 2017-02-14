@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Grabber.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\MenuManager.cs" />
+     <Compile Include="Assets\Scripts\NewSpawnManager.cs" />
      <Compile Include="Assets\Scripts\PopupManager.cs" />
      <Compile Include="Assets\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
