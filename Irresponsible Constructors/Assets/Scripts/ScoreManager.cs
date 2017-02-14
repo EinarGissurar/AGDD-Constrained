@@ -38,7 +38,7 @@ public class ScoreManager : MonoBehaviour {
 		}
 	}
 
-	void OnEnable() 
+	void OnEnable()
 	{
 		if (gameManager != null) {
 			gameManager.PlayersWinEvent += OnGameOver;

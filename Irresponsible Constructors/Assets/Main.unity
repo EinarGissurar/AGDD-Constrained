@@ -597,6 +597,11 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 453844477}
+    - target: {fileID: 114073574932550794, guid: 5003d0a7ccb1f48a1b3df04f28c30aff,
+        type: 2}
+      propertyPath: m_Text
+      value: 'SCORE: 00'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5003d0a7ccb1f48a1b3df04f28c30aff, type: 2}
   m_IsPrefabParent: 0
@@ -1244,6 +1249,16 @@ Prefab:
     - target: {fileID: 1349648241884434, guid: 65eae66aa0c704b89b299bc5e6889158, type: 2}
       propertyPath: m_Name
       value: PopupCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373601766538102, guid: 65eae66aa0c704b89b299bc5e6889158,
+        type: 2}
+      propertyPath: m_Text
+      value: +1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114595258261192444, guid: 65eae66aa0c704b89b299bc5e6889158,
+        type: 2}
+      propertyPath: m_Text
+      value: +1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65eae66aa0c704b89b299bc5e6889158, type: 2}
