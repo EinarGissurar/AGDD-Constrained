@@ -26,6 +26,8 @@ public class FloorController : MonoBehaviour
 
 	void Awake() {
 		gamemanger = FindObjectOfType<GameManager> ();
+		Debug.Log ("ConveyorLayer: " + LayerMask.NameToLayer ("Conveyor"));
+		Physics2D.IgnoreLayerCollision (LayerMask.NameToLayer ("Conveyor"), gameObject.layer);
 	}
 
     // Use this for initialization

@@ -5,6 +5,11 @@ using UnityEngine;
 public delegate void ConstructorControllerAddedAction(ConstructorController controller);
 public delegate void ConstructorControllerDeletedAction();
 
+public delegate void CubeReturnPoint();
+public delegate void CubeLostPoint();
+
+public delegate void CubeReturned();
+
 public class CubeManager : MonoBehaviour
 {
     [SerializeField]
@@ -26,14 +31,24 @@ public class CubeManager : MonoBehaviour
     FloorController floorController;
     ConstructorController constructorController;
     Collider2D[] colliders;
+	bool isExited = false;
+	bool isOnGoal = false;
 
+	public event CubeReturnPoint CubeReturnPointEvent;
+	public event CubeLostPoint CubeLostPointEvent;
     public event ConstructorControllerAddedAction ConstructorControllerAddedEvent;
     public event ConstructorControllerDeletedAction ConstructorControllerDeletedEvent;
+	public static event CubeReturned onCubeReturned;
+
+	public static List<int> cubesReturned = new List<int>();
+	public static List<int> cubesLost = new List<int>();
 
     void Awake()
     {
         AddRigidBody();
         colliders = GetComponents<Collider2D>();
+
+
     }
 
     // Use this for initialization
@@ -141,7 +156,35 @@ public class CubeManager : MonoBehaviour
             if (ConstructorControllerAddedEvent != null)
                 ConstructorControllerAddedEvent(constructorController);
         }
+
+		Debug.Log ("onCubeReturned: " + onCubeReturned);
+		if (collision.gameObject.name == "ConveyorBeltGoal" && onCubeReturned != null  && !isOnGoal) {
+			isOnGoal = true;
+			//Debug.Log ("hit conveyor belt goal");
+
+			cubesReturned.Add (collision.gameObject.GetInstanceID ());
+			onCubeReturned ();
+				//score++;
+			ScoreManager.newScore += 1;
+			//Debug.Log (" Entered conveyor");
+			CubeReturnPoint ();
+		}
+		//Debug.Log (collision.gameObject.name);
     }
+
+	void OnTriggerEnter2D(Collider2D collision) {
+		if (isExited)
+			return;
+		
+		if (collision.name == "SceneExitBottom" && onCubeReturned != null) {
+			ScoreManager.newScore -= 1;
+
+			onCubeReturned ();
+			CubeLostPoint ();
+			isExited = true;
+		}
+
+	}
 
     private void SetCollidersActive(bool isActive)
     {
@@ -151,18 +194,36 @@ public class CubeManager : MonoBehaviour
                 collider.enabled = isActive;
         }
     }
-
+	//má henda?
 	private void OnBecameInvisible()
 	{
 
 		//lose game?
-		if (!CubeReturn.cubesReturned.Contains (this.gameObject.GetInstanceID ())) {
+
+		/*if (!cubesReturned.Contains (this.gameObject.GetInstanceID ())) {
 			//Debug.Log ("Box fell down, player should lose");
 			ScoreManager.newScore -= 1;
+			Debug.Log ("calling cube lost point");
+			CubeLostPoint ();
 		} 
 		else {//for debugging purposes, can be removed
 			//Debug.Log ("Box returned normally");
 		}
-		Destroy(this.gameObject);
+		Destroy(this.gameObject);*/
+	}
+
+	void CubeReturnPoint() {
+		if (CubeReturnPointEvent != null) {
+			//Debug.Log (this.gameObject.transform.position);
+			CubeReturnPointEvent();
+		}
+
+	}
+
+	void CubeLostPoint() {
+		if (CubeLostPointEvent != null) {
+			//Debug.Log ("cube lost point event");
+			CubeLostPointEvent();
+		}
 	}
 }

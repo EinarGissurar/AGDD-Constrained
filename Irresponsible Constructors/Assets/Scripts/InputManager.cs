@@ -28,7 +28,7 @@ public class InputManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		originalGrabTransformPositionX = grabTransform.localPosition.x;
-		Debug.Log (originalGrabTransformPositionX);
+		//Debug.Log (originalGrabTransformPositionX);
 	}
 	
 	// Update is called once per frame

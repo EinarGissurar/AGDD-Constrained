@@ -27,7 +27,7 @@ public class SpawnManager : MonoBehaviour {
 	void SpawnBox(){
 		if(spawns-- == 0){
 			CancelInvoke ("SpawnBox");
-			Debug.Log ("invoke was canceled");
+			//Debug.Log ("invoke was canceled");
 			return;
 		}
 		//else
@@ -36,24 +36,24 @@ public class SpawnManager : MonoBehaviour {
 
 	void TriggerNextSpawn(){
 		currentlySpawned--;
-		Debug.Log ("spawn triggered, currently on screen: " + currentlySpawned);
+		//Debug.Log ("spawn triggered, currently on screen: " + currentlySpawned);
 		if (currentlySpawned != 0)
 			return;
 
 		challenge++;
-		Debug.Log ("about to spawn boxes : " + challenge);
+		//Debug.Log ("about to spawn boxes : " + challenge);
 
-		Debug.Log ("challenge is: " + challenge);
+		//Debug.Log ("challenge is: " + challenge);
 		currentlySpawned = challenge;
 		spawns = challenge;
 		InvokeRepeating ("SpawnBox", 0f, spawnInterval);
 	}
 
 	void onEnable(){
-		CubeReturn.onCubeReturned += TriggerNextSpawn;
+		CubeManager.onCubeReturned += TriggerNextSpawn;
 	}
 	void onDisable(){
-		CubeReturn.onCubeReturned -= TriggerNextSpawn;
+		CubeManager.onCubeReturned -= TriggerNextSpawn;
 	}
 	
 }
